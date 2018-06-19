@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class URLParser {
-	private static URL urlAdderess; //URL address
+	private static URL urlAddress; //URL address
 	static ArrayList<String> urlLine = new ArrayList<String>();
 	HttpURLConnection code;
 	BufferedReader br;
@@ -26,8 +26,8 @@ public class URLParser {
 		//url = "http://hisnet.handong.edu";
 
 		try {
-			urlAdderess = new URL(url);
-			code = (HttpURLConnection)urlAdderess.openConnection(); 
+			urlAddress = new URL(url);
+			code = (HttpURLConnection)urlAddress.openConnection(); 
 
 			br = new BufferedReader(new InputStreamReader(code.getInputStream()));
 
