@@ -15,7 +15,7 @@ public class URLParser {
 	HttpURLConnection code;
 	BufferedReader br;
 	String line;
-	
+
 	public static ArrayList<String> getUrlLine() {
 		return urlLine;
 	}

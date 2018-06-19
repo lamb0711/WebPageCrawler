@@ -19,16 +19,16 @@ public class Main {
 		Main my = new Main();
 		my.run(args);
 	}
-	
+
 	private void run(String[] args) {
 		Options options = createOptions();
-		
+
 		if(parseOptions(options, args)){
 			if (help){
 				printHelp(options);
 				return;
 			}
-			
+
 			URLParser pa = new URLParser();
 			try {
 				pa.saveUrlLine(url);
@@ -40,14 +40,14 @@ public class Main {
 			fi.saveInHtmlFile(output);
 
 			System.out.println("You provided \"" +url + "\" as the value of the option u");
-			
-			
+
+
 			if(verbose) {
 				System.out.println("Your program is terminated. (This message is shown because you turned on -v option!");
 			}
 		}
 	}
-	
+
 	private boolean parseOptions(Options options, String[] args) {
 		CommandLineParser parser = new DefaultParser();
 
@@ -56,7 +56,7 @@ public class Main {
 
 			url = cmd.getOptionValue("u");
 			output = cmd.getOptionValue("d");
-			
+
 			verbose = cmd.hasOption("v");
 			help = cmd.hasOption("h");
 
@@ -66,7 +66,7 @@ public class Main {
 		}
 		return true;
 	}
-	
+
 	private void printHelp(Options options) {
 		// automatically generate the help statement
 		HelpFormatter formatter = new HelpFormatter();
@@ -74,11 +74,11 @@ public class Main {
 		String footer ="\nPlease report issues at https://github.com/lamb0711/WebPageCrawler/issues";
 		formatter.printHelp("Web page Crawler", header, options, footer, true);
 	}
-	
+
 	private Options createOptions() {
 		Options options = new Options();
-		
-		
+
+
 		options.addOption(Option.builder("u").longOpt("url")
 				.desc("Set a address of url")
 				.hasArg()
@@ -102,7 +102,7 @@ public class Main {
 		options.addOption(Option.builder("h").longOpt("help")
 				.desc("Help")
 				.build());
-		
+
 		return options;
 	}
 
