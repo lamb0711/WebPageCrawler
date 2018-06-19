@@ -19,7 +19,7 @@ public class FileWriter {
 		}
 
 		for(String line : URLParser.getUrlLine()) {
-			System.out.println(line);
+			
 			outputStream.println(line);
 		}
 

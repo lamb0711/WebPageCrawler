@@ -32,7 +32,7 @@ public class URLParser {
 			br = new BufferedReader(new InputStreamReader(code.getInputStream()));
 
 			while ((line = br.readLine()) != null) {
-				//System.out.println(line);
+				
 				urlLine.add(line);
 			}
 
